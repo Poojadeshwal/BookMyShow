@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from "react"
-import { Button, Form } from "antd"
+import {  Form } from "antd"
 import Movies from "./MovieDetails"
-import { getFunction } from "../../../services/movie/movies"
+import {  moviesDetailFunction } from "../../../services/movie/movies"
 import ArtistDetailPage from "../../artists/ArtistDetailPage"
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { getReviewFunction } from "../../../services/review/review"
 import Reviews from "../../reviews/Reviews"
 
 
 const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
+
+    console.log('MovieDetailPage reached', back, movieId, onSelectArtist)
     const [movieDetails, setMovieDetails] = useState(null)
     const [review, setReview] = useState(null);
     const [updatedCount, setUpdatedCount] = useState(0);
@@ -45,48 +47,40 @@ const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
     // console.log(review);
 
 
-    useEffect(() => {
-        Promise.all([getFunction(),
-        getFunction(),//artist
-        getFunction()//reviews
-        ])
-            .then((data) => {
-                console.log('promises data', data)
-                setMovieDetails({ movieDetail: data[0], reviews: data[1], artist: data[2] })
-            }).catch(error => {
-                console.error('Error fetching data:', error);
-            })
-        //     getFunction()
-        //           .then((data) => {
-        //             setMovieDetails(data);
-        //           })
+    // useEffect(() => {
+    //     Promise.all([getFunctions(),
+    //     getFunctions(),//artist
+    //     getFunctions()//reviews
+    //     ])
+    //         .then((data) => {
+    //             console.log('promises data', data)
+    //             setMovieDetails({ movieDetail: data[0], reviews: data[1], artist: data[2] })
+    //         }).catch(error => {
+    //             console.error('Error fetching data:', error);
+    //         })
+    //     //     getFunction()
+    //     //           .then((data) => {
+    //     //             setMovieDetails(data);
+    //     //           })
+    // }, [])
+    const selectedMovie = parseInt(movieId);
+    useEffect(()=>{
+     console.log("called")
+     moviesDetailFunction(selectedMovie, "movieId").then((detail)=>{
+       // console.log(detail,"detail of the artist");
+       setMovieDetails(detail);
+     })
+    },[selectedMovie])
+   console.log(movieDetails,"details of movie")
+    // let selectedMovie = null;
 
-<<<<<<< HEAD
-    }, [])
-    console.log(movieDetails, "pooja")
-    let selectedMovie = null;
 
-
-    if (movieDetails) {
-        selectedMovie = movieDetails.movieDetail.find(movie => movie.movieId == movieId);
-    }
-=======
-     if (movieDetails) {
-        selectedMovie = movieDetails.movieDetail.find(movie => movie.movieId === movieId);
-     }
+    // if (movieDetails) {
+    //     selectedMovie = movieDetails.movieDetail.find(movie => movie.movieId == movieId);
+    // }
     
-    return(
-        <>
-        <Button style={{
-          
-            fontSize: '20px',
-            color:"black",
-             backgroundColor:"red",
-            width:'60px',
-            height:'40px',
-            alignItems:'center'
->>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
-
+   
+   
     return (
         <>
             <Reviews
@@ -98,9 +92,9 @@ const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
                 isModalOpen={isModalOpen}
                 setReview={setReview}
             />
-            {selectedMovie &&
+            {movieDetails &&
                 <Movies
-                    movie={selectedMovie}
+                movieDetails={movieDetails}
                     onSelectArtist={onSelectArtist}
                     back={back}
                     review={review}
@@ -124,21 +118,33 @@ const UI = {
     ArtistDetailPage: 'ArtistDetailPage', 
     MovieDetailPage: 'MovieDetailPage' 
 };
-<<<<<<< HEAD
 const MovieArtistDetailWrapper = ({ back, movieId }) => {
-    // const params=useParams()
-    // let movieId=params.movieId
-
-=======
-const  MovieArtistDetailWrapper=({back,movieId})=>{   
     
->>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
     const [ui, setUI] = useState(UI.MovieDetailPage);
     const [selectedArtistId, setSelectedArtistId] = useState(null);
-    const handleSelectArtist = (artistId) => {
+    let handleSelectArtist = (artistId) => {
         setSelectedArtistId(artistId);
         setUI(UI.ArtistDetailPage);
     };
+
+    const params=useParams()
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    if(params.movieId){
+        movieId=params.movieId
+
+        back=()=>{
+            let url = (location.state?.from?.pathname+location.state?.from?.search||'') || "/movies" 
+            //console.log('back url',location, url)
+            //navigate(from, { replace: true }); 
+            navigate(url)
+        }
+        handleSelectArtist=artistId=>navigate(`/artist/${artistId}`, { state: { from: location }})
+        console.log('MovieArtistDetailWrapper reached',movieId)
+    }
+
+
 
     const artistBack = () => {
         setSelectedArtistId(null);

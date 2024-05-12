@@ -1,0 +1,71 @@
+[ {
+    "userName": "Surbhi",
+    "password": "surbhi",
+    "permissions": [
+        "editMovie",
+        "editEvent",
+        "deleteEvent",
+        "addEvent"
+    ]
+},
+    {
+        "userName": "Pooja",
+        "password": "pooja",
+        "permissions": [
+            "editMovie",
+            "deleteMovie",
+            "addMovie",
+            "editEvent",
+            "deleteEvent",
+            "addEvent"
+        ]
+    },
+    {
+        "userName": "Anushkha",
+        "password": "anushkha",
+        "permissions": [
+            "editMovie",
+            "deleteMovie",
+            "addMovie",
+            "editEvent",
+            "deleteEvent",
+            "addEvent"
+        ]
+    },
+    {
+        "userName": "Karishma",
+        "password": "karishma",
+        "permissions": [
+            "editMovie",
+            "deleteMovie",
+            "addMovie",
+            "editEvent",
+            "deleteEvent",
+            "addEvent"
+        ]
+    },
+    {
+        "userName": "Niyati",
+        "password": "niyati",
+        "permissions": [
+            "editMovie",
+            "deleteMovie",
+            "addMovie",
+            "editEvent",
+            "deleteEvent",
+            "addEvent"
+        ]
+    },
+    
+    {
+        "userName": "Rashu",
+        "password": "rashu",
+        "permissions": [
+
+            "editEvent",
+            "deleteEvent",
+            "addEvent"
+        ]
+    }
+]
+

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Divider, Typography, Flex } from "antd";
+import { Button, Card, Divider, Typography, Flex, Row, Col } from "antd";
 import {
   ArrowLeftOutlined,
   EnvironmentFilled,
@@ -8,6 +8,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+
 
 export default function EventDetail({
   eventDetail,
@@ -18,26 +19,27 @@ export default function EventDetail({
   initFormData,
   showModal,
 }) {
-
-  let artistList = eventDetail.artist?eventDetail.artist: null;
-
-
-  const findReview = () => {
-    if (review) {
-      return review?.filter(
-        (review) => review.categoryId === eventDetail.eventId
-      );
-    }
-    return [];
-  };
-  const eventReviews = findReview();
+  
+console.log(eventDetail, "event")
+console.log(review, "review")
+  // let artistList = eventDetail.artist?eventDetail.artist: null;
+  // console.log("artist",artistList)
+  // const findReview = () => {
+  //   if (review) {
+  //     return review?.filter(
+  //       (review) => review.categoryId === eventDetail.eventId
+  //     );
+  //   }
+  //   return [];
+  // };
+  // const eventReviews = findReview();
 
   const initCreateUpdate = () => {
     payload.current.operation = "ADD";
     payload.current.data = {};
     initFormData();
   };
-  console.log("payload", payload.current.data);
+  // console.log("payload", payload.current.data);
 
   return (
     <>
@@ -68,13 +70,15 @@ export default function EventDetail({
           Add Review
         </Button>
       </Flex>
+      {eventDetail?.map((detail)=>(
+        <>
       <Card
         hoverable
         style={{
           width: 1000,
           margin: "auto",
         }}
-        cover={<img src={eventDetail.eventImage} alt={eventDetail.eventName} />}
+        cover={<img src={detail.eventImage} alt={detail.eventName} />}
       >
         <Card.Meta
           style={{ fontSize: "40px" }}
@@ -83,7 +87,7 @@ export default function EventDetail({
               <Typography.Title
                 style={{ margin: 0, padding: 0, color: "black" }}
               >
-                {eventDetail.eventName}
+                {detail.eventName}
               </Typography.Title>
               <Flex gap="large">
                 <Typography
@@ -94,11 +98,11 @@ export default function EventDetail({
                     width: "100%",
                   }}
                 >
-                  {eventDetail.genres.join(", ")} |{" "}
-                  {eventDetail.language.join(", ")} |{" "}
-                  {eventDetail.censorBoardRating} | {eventDetail.duration}
+                  {detail?.genres?.join(", ")} |{" "}
+                  {detail?.language?.join(", ")} |{" "}
+                  {detail?.censorBoardRating} | {detail?.duration}
                 </Typography>
-                <Link to={`booking/event/${eventDetail.eventId}`}>
+                <Link to={`/event/${detail.eventId}/booking/event/${detail.eventId}`}>
                   <Button
                     type="primary"
                     style={{
@@ -115,16 +119,16 @@ export default function EventDetail({
               </Flex>
               <Divider />
               <Typography style={{ fontSize: "18px", color: "black" }}>
-                {eventDetail?.date?.length <= 1
-                  ? eventDetail?.date[0]
-                  : `${eventDetail?.date[0]} - ${
-                      eventDetail?.date[eventDetail?.date?.length - 1]
+                {detail?.date?.length <= 1
+                  ?detail?.date[0]
+                  : `${detail?.date[0]} - ${
+                      detail?.date[detail?.date?.length - 1]
                     }`}{" "}
-                {eventDetail.eventTime} onwards
+                {detail.eventTime} onwards
                 <EnvironmentFilled
                   style={{ color: "#fdd835", marginLeft: "10%" }}
                 />{" "}
-                {eventDetail.venue}
+                {detail.venue}
               </Typography>
             </div>
           ]}
@@ -132,50 +136,29 @@ export default function EventDetail({
       </Card>
       <Divider />
       <Card>
-        <Typography.Title style={{ paddingLeft: "10%" }}>Cast</Typography.Title>
-        {artistList?.map((artist) => (
-          <div onClick={() => onSelectArtist(artist?.artistId)}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: 8,
-                paddingLeft: "20%",
-              }}
-            >
-              <img
-                style={{
-                  width: 200,
-                  height: 200,
-                  borderRadius: "50%",
-                  marginRight: 50,
-                }}
-                src={artist.image}
-                alt={artist.name}
-              />
-              <div>
-                <Typography.Title level={2}>{artist?.name}</Typography.Title>
-                {artist?.role.map((role, index) => (
-                  <Typography.Title
-                    level={4}
-                    key={index}
-                    style={{ margin: "5px 2px" }}
-                  >
-                    {role}
-                  </Typography.Title>
+                <Typography.Title style={{marginLeft:"10%"}}>Cast</Typography.Title>
+                <Row gutter={16}>
+                {detail.artist?.map(artist=>(
+                    <Col span ={5}>
+                    <div  key={artist?.artistId}  onClick={()=>{
+                        onSelectArtist(artist?.artistId)
+                    }}>
+                    {<img style={{ width: 150, height: 150,borderRadius:'50%', marginLeft:200 }}
+                    src={artist.image}
+                    alt={artist.name} />}
+                    <Typography.Title level={4} style={{marginLeft:200 ,width: 200 }}>{artist.name}</Typography.Title>
+                    </div>
+                    </Col>
                 ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </Card>
-
-      <Divider />
+                </Row>
+                </Card>
+                </>
+              ))}
       <Typography.Title style={{ marginLeft: "10%" }}>
         Top reviews
       </Typography.Title>
       <Flex gap="20px" wrap="wrap" style={{ marginLeft: "10%" }}>
-        {eventReviews.map((eventReview) => (
+        {review?.map((eventReview) => (
           <Card
             style={{
               width: 400,

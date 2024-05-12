@@ -2,17 +2,20 @@
 import artist from '../../services/artist/artist.json'
 import CrudOperation from '../../utils/CrudOperation';
 let artistDetail=artist;
-// export default function Main(){
-// let artistDetail = artist;
-// console.log(artistDetail)
-// }
+
 export function getArtist(){
     return new Promise((resolve)=>{
         artistDetail=CrudOperation.get(artistDetail);
         resolve(artistDetail)
     })
 }
-
+export function artistDetailFunction(artistId, pk){
+    return new Promise((resolve)=>{
+        let artistDetails = CrudOperation.getDetail(artistDetail, artistId, pk);
+        
+        resolve(artistDetails);
+    })
+}
 // export function addArtist(newArtist){   
 //     return new Promise((resolve) =>{
 //         artistDetail = CrudOperation.add(artistDetail, newArtist);

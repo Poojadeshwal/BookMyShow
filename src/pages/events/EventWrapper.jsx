@@ -12,7 +12,8 @@ export default function EventWrapper() {
 
   const [currentUi, setCurrentUi] = useState(Ui.EventListPage);
   const [event, setEvent] = useState(null);
-
+  
+  console.log("Wrapper", event)
   return (
     <>
       {currentUi === Ui.EventListPage && (

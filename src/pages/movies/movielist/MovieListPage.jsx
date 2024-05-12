@@ -1,39 +1,100 @@
 import React, { useState } from "react";
-import { Card } from 'antd';
+import { Card, Typography } from 'antd';
 import { Col, Row } from 'antd';
 import Filters from "./FilterMovie";
 import Movies from "./MovieList";
-
-export default function MovieListPage({ onSelectMovie,
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+const { Text, Paragraph, Title } = Typography;
+export default function MovieListPage({ onSelectMovie, onDelete,
+    results,
     showModal,
+    inputText,
     payload,
     initFormData,
-    updatedCount}) {
-    const [searchObj, setSearchObj] = useState({});
+    updatedCount }) {
+
+    
+    const [searchParams, setSearchParams] = useSearchParams()
+    
+    const queryParams = {};
+    searchParams.forEach((value, key) => {
+        queryParams[key] = value;
+    })
+        
+    const [searchObj, setSearchObj] = useState(queryParams);
+    
     const [listUpdatedCount, setListUpdatedCount] = useState(null);
+    
+    
+    const setSearchUrl=(searchObject)=>{
+        setSearchParams(searchObject)
+        setSearchObj(searchObject)
+    }
+
+    console.log('SearchObj', searchObj)
+    console.log('searchParams', searchParams)
+    //searchParams.get("__firebase_request_key")
+
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
     const handleSelectMovie = (movieId) => {
-        onSelectMovie(movieId);
-    };
+        //onSelectMovie(movieId);
+        //console.log('handleSelectMovie location', location)
+        navigate(`/movie/${movieId}`, { state: { from: location } })
+    }
+
     return (
         <>
-            <Card style={{ backgroundColor: "white" }} >
-                <h1>Movies In Delhi-NCR</h1>
-                <Row gutter={[16, 16]}>
-                    <Col span={6}>
-                        <Filters searchObj={searchObj} setSearchObj={setSearchObj} />
-                    </Col>
-                    <Col span={18}>
-                        <Movies 
-                        payload={payload}
-                        initFormData={initFormData}
-                        updatedCount={updatedCount}
-                        showModal = {showModal}
-                        onSelectMovie={handleSelectMovie}
-                         searchObj={searchObj} 
-                         listUpdatedCount={listUpdatedCount} />
-                    </Col>
-                </Row>
-            </Card>
+            {results && results.length > 0 ? (
+                <>
+                    <Typography.Title>Movies In Delhi-NCR</Typography.Title>
+                    <Card style={{ backgroundColor: "white" }} >
+
+
+                        <Row gutter={[16, 16]}>
+
+                            <Col span={18} style={{ marginTop: "35px" }}>
+                                <Movies
+                                    payload={payload}
+                                    initFormData={initFormData}
+                                    updatedCount={updatedCount}
+                                    showModal={showModal}
+                                    onSelectMovie={handleSelectMovie}
+                                    searchObj={searchObj}
+                                    listUpdatedCount={listUpdatedCount}
+                                    onDelete={onDelete}
+                                    inputText={inputText}
+                                    results={results} />
+                            </Col>
+                        </Row>
+                    </Card>
+                </>
+            ) : (
+                <Card style={{ backgroundColor: "white" }} >
+                    <Typography.Title>Movies In Delhi-NCR</Typography.Title>
+
+                    <Row gutter={[16, 16]}>
+                        <Col span={6}>
+                            <Filters searchObj={searchObj} setSearchObj={setSearchUrl} />
+                        </Col>
+                        <Col span={18} style={{ marginTop: "35px" }}>
+                            <Movies
+                                payload={payload}
+                                initFormData={initFormData}
+                                updatedCount={updatedCount}
+                                showModal={showModal}
+                                onSelectMovie={handleSelectMovie}
+                                searchObj={searchObj}
+                                listUpdatedCount={listUpdatedCount}
+                                onDelete={onDelete}
+                                inputText={inputText}
+                                results={results} />
+                        </Col>
+                    </Row>
+                </Card>
+            )}
         </>
     )
 }
@@ -43,46 +104,6 @@ export default function MovieListPage({ onSelectMovie,
 
 
 
-// import React, { useState } from "react";
-// import { Card } from 'antd';
 
-// import { Col, Row} from 'antd';
-// import Filters from "./FilterMovie";
-// import Movies from "./MovieList";
-
-// export default function MovieListPage({ onSelectMovie }) {
-//     const [searchObj, setSearchObj] = useState({});
-//     const [listUpdatedCount, setListUpdatedCount] = useState(null);
-
-//     const handleSelectMovie = (movieId) => {
-//         console.log(movieId,"harsh")
-//         onSelectMovie(movieId); 
-//     };
-
-
-//     console.log("MovieListPage");
-//     return (
-//         <>
-//             <Card style={{ backgroundColor: "white" }} >
-//                 <h1>Movies In Delhi-NCR</h1>
-//                 <Row gutter={[16, 16]}>
-//       <Col span={4}>
-//                 <Filters searchObj={searchObj} setSearchObj={setSearchObj} />
-                
-//                 {/* // style={{ */}
-//                 {/* //     backgroundColor: "lightPink", */}
-//                 {/* //    width:'130%' */}
-//                 {/* // }} */}
-                     
-//                   </Col>
-//       <Col span={20}>    
-//                 <Movies onSelectMovie={handleSelectMovie} searchObj={searchObj} listUpdatedCount={listUpdatedCount}  />
-//                 </Col> 
-//                 </Row> 
-                
-//             </Card>
-//         </>
-//     )
-// }
 
 

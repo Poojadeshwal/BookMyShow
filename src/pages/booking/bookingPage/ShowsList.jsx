@@ -11,37 +11,35 @@ const filterShows = (shows, showSearch) => {
   return shows.filter((show) => {
     if (
       !showSearch ||
-      ((!showSearch.language ||
-        showSearch.language.every((language) =>
-          show.language.includes(language)
-        )) &&
-        (!showSearch.location ||
-          showSearch.location.every((location) =>
-            show.venue.includes(location)
-          )))
-    )
+      (!Array.isArray(showSearch.language) || showSearch.language.length === 0 || showSearch.language.some((language) => show.language.includes(language))) &&
+      (!Array.isArray(showSearch.location) || showSearch.location.length === 0 || showSearch.location.some((location) => show.venue.includes(location)))
+    ) {
       return true;
+    }
     return false;
   });
 };
-const ShowsList = ({ showSearch, shows, movies, events, showModal, payload, initFormData }) => {
-  const [filteredShow, setFilteredShow] = useState(null);
+const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormData, movies}) => {
 
+
+  const [filteredShow, setFilteredShow] = useState(null);
+ 
+  // console.log("show checking",shows);
 
   useEffect(() => {
     if (showSearch && shows) {
       let filteredEvents = filterShows(shows, showSearch);
-      // console.log("filtered", filteredEvents);
       setFilteredShow(filteredEvents);
     }
   }, [shows, showSearch]);
+
   useEffect(() => {
     if (showSearch && shows) {
       let filteredMovies = filterShows(shows, showSearch);
-      // console.log("filtered", filteredEvents);
       setFilteredShow(filteredMovies);
     }
   }, [shows, showSearch]);
+
 
   return (
     <>
@@ -55,8 +53,8 @@ const ShowsList = ({ showSearch, shows, movies, events, showModal, payload, init
             index={show.showId}
             showModal={showModal}
             payload={payload}
-            initFormData={initFormData}
 
+            initFormData={initFormData} 
           />
         ))
       ) : (
@@ -68,23 +66,24 @@ const ShowsList = ({ showSearch, shows, movies, events, showModal, payload, init
 
 const Show = ({ show, events, movies, showModal, payload, initFormData }) => {
   const { id } = useParams();
-
+  // console.log("id",id)
   const findEvent = (categoryId) => {
     return events.find((event) => event.eventId === categoryId);
   };
   const event = findEvent(show.categoryId);
 
   const findMovie = (categoryId) => {
-    return movies.find((movie) => movie.movieId === categoryId);
+    return movies?.find((movie) => movie.movieId === categoryId);
   };
   const movie = findMovie(show.categoryId);
+
 
   const initCreateUpdate = () => {
     payload.current.operation = "ADD";
     payload.current.data = {};
     initFormData();
   }
-  // console.log(payload.current.data)
+  // console.log(payload.current.data, "payload")
 
 
   return (
@@ -141,7 +140,7 @@ const Show = ({ show, events, movies, showModal, payload, initFormData }) => {
       <Flex>
         <Typography.Title level={4} style={{ width: "50%", marginLeft: "3%" }}>
           <HeartOutlined style={{ marginRight: "10px", color: "grey" }} />
-          {event.eventName}
+          {event?.eventName}
         </Typography.Title>
         <Button
           style={{ marginTop: "30px", color: "#4ABD5D", height: "40px", marginRight: "25%" }}
@@ -174,7 +173,8 @@ const Show = ({ show, events, movies, showModal, payload, initFormData }) => {
       </Typography>
     </> 
   )}
-  {movie&&(
+ 
+ {movie&&(
     <>
     {id && (
         <>
@@ -228,14 +228,17 @@ const Show = ({ show, events, movies, showModal, payload, initFormData }) => {
           <HeartOutlined style={{ marginRight: "10px", color: "grey" }} />
           {movie.movieName}
         </Typography.Title>
-        <Button
-          style={{ marginTop: "30px", color: "#4ABD5D", height: "40px", marginRight: "25%" }}
-        >
-          {show.timing}
-        </Button>
+        {show.timing.map((show)=>(
+ <Button
+ style={{ marginTop: "30px", color: "#4ABD5D", height: "40px", marginRight:"20px" }}
+>
+ {show}
+</Button>
+        ))}
+       
         <Button
           onClick={() => { initCreateUpdate(); showModal() }}
-          style={{ marginTop: "30px", color: "white", height: "40px", backgroundColor: "rgb(220, 53, 75)" }}
+          style={{ marginTop: "30px", color: "white", height: "40px", backgroundColor: "rgb(220, 53, 75)", marginLeft:"6%" }}
         >
           BOOK
         </Button>

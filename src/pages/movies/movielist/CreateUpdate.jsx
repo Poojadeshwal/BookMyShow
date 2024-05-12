@@ -1,5 +1,6 @@
-import { Modal, Input, Form, Select, DatePicker, Button } from "antd";
+import { Modal, Input, Form,  Button } from "antd";
 import { addFunction, updateFunction } from "../../../services/movie/movies";
+import { TranslateFunction } from "../../../utils/internalisation";
 
 
 export default function CreateUpdate({
@@ -9,24 +10,36 @@ export default function CreateUpdate({
   payload,
   form,
   setUpdatedCount,
-  onSelectMovie
+  updatedCount,
 }) {
+  
+
+//   const dropdown = TranslateFunction("dropdown");
+  const labels = TranslateFunction("labels");
+
   const submitForm = (values) => {
-    payload.current.data = { ...payload.current.data, ...values };
+    const newFieldValues = {
+        ...values,
+        "genres": [values["genres"]],
+        "languages":[values["languages"]],
+        artist:["dfghj"]
+    }
+    payload.current.data = { ...payload.current.data, ...newFieldValues };
     console.log(payload.current.data, "create")
     if (payload.current.operation === "ADD") {
       payload.current.data.movieId = Math.random();
       addFunction(payload.current.data).then((data) => {
         // onSelectMovie(data.movieId);
-        setUpdatedCount((count) => count + 1);
+        setUpdatedCount(updatedCount + 1);
         handleCancel();
       });
     } else {
+        console.log(payload.current.data,"happy")
       updateFunction(payload.current.data, "movieId").then((data) => {
-        console.log(data)
+        console.log("data",data)
         // onSelectMovie(data.movieId);
-        setUpdatedCount((count) => count + 1);
-        handleCancel();
+        setUpdatedCount(updatedCount + 1);
+        handleOk();
        console.log(data);
       });
     }
@@ -51,22 +64,9 @@ export default function CreateUpdate({
           form={form}
           autoComplete="off"
         >
-           {/* <Form.Item
-                label="Movie_Id"
-                name="movieId"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please provide Movie Id!',
-                    },
-                ]}
-            >
-                <Input style={{
-                    width: '100%',
-                }} placeholder="'Please provide Movie Id', " />
-            </Form.Item > */}
           <Form.Item
-                label="Movie Name"
+         
+                label= {labels("Movie Name")}
                 name="movieName"
                 rules={[
                     {
@@ -80,7 +80,8 @@ export default function CreateUpdate({
                 }} placeholder="'Please provide Movie Name', " />
             </Form.Item >
             <Form.Item
-                label="Movie Poster"
+                label={labels("Movie Poster")}
+
                 name="moviePoster"
                 rules={[
                     {
@@ -93,9 +94,9 @@ export default function CreateUpdate({
                     width: '100%',
                 }} placeholder="'Please provide Movie Poster', " />
             </Form.Item >
-            {/* <Form.Item
-                label="Movie Languages"
-                name="movieLanguages"
+             <Form.Item
+                label={labels("Movie Languages")}
+                name="languages"
                 rules={[
                     {
                         required: true,
@@ -108,7 +109,7 @@ export default function CreateUpdate({
                 }} placeholder="'Please provide Movie Languages', " />
             </Form.Item >
             <Form.Item
-                label="Duration"
+                label={labels("Duration")}
                 name="duration"
                 rules={[
                     {
@@ -122,7 +123,7 @@ export default function CreateUpdate({
                 }} placeholder="'Please provide Duration', " />
             </Form.Item >
             <Form.Item
-                label="Genres"
+                label={labels("Genres")}
                 name="genres"
                 rules={[
                     {
@@ -136,8 +137,8 @@ export default function CreateUpdate({
                 }} placeholder="'Please provide Genres', " />
             </Form.Item >
             <Form.Item
-                label="Release Date"
-                name="Release Date"
+                label={labels("Release Date")}
+                name="releaseDate"
                 rules={[
                     {
                         required: true,
@@ -150,8 +151,8 @@ export default function CreateUpdate({
                 }} placeholder="'Please provide Release Date', " />
             </Form.Item >
             <Form.Item
-                label="Movie Details"
-                name="movieDetails"
+                label={labels("Movie Details")}
+                name="movieDetail"
                 rules={[
                     {
                         required: true,
@@ -164,7 +165,7 @@ export default function CreateUpdate({
                 }} placeholder="'Please provide Movie Details', " />
             </Form.Item >
             <Form.Item
-                label="Censor Board Rating"
+                label={labels("Censor Board Rating")}
                 name="censorBoardRating"
                 rules={[
                     {
@@ -176,16 +177,10 @@ export default function CreateUpdate({
                 <Input style={{
                     width: '100%',
                 }} placeholder="'Please provide Censor Board Rating', " />
-<<<<<<< HEAD
-            </Form.Item >     
-=======
-            </Form.Item > */}
-          
-          
->>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739
-          <Form.Item>
+          </Form.Item>
+                <Form.Item>
             <Button type="primary" onClick={handleCancel}>
-              Cancel
+             {labels("Cancel")} 
             </Button>
             <Button type="primary" htmlType="submit">
             {payload.current.operation === "ADD" ? "Add Movie" : "Update Movie"}

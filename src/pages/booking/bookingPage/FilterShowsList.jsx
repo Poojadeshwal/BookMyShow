@@ -5,6 +5,7 @@ const languages = ["Hindi", "English", "Punjabi", "Urdu"];
 const locations = ["Noida", "Delhi", "Gurugram"];
 
 export default function FilterShowsList({ showSearch, setShowSearch }) {
+  // console.log("shows", showSearch);
 
   return (
     <div>
@@ -15,7 +16,7 @@ export default function FilterShowsList({ showSearch, setShowSearch }) {
           value={showSearch.language}
           onChange={(language) => setShowSearch({ ...showSearch, language})}
           allowClear
-          style={{ width: "20%", marginTop: "10px", marginLeft: "55%", marginBottom: "15px" }}
+          style={{ width: "30%", marginTop: "10px", marginLeft: "45%", marginBottom: "15px" }}
         >
           {languages.map((language, index) => (
             <Select.Option key={index} value={language}>
@@ -27,9 +28,10 @@ export default function FilterShowsList({ showSearch, setShowSearch }) {
         <Select
           mode="multiple"
           placeholder="Location"
-          onChange={(value) => setShowSearch({ ...showSearch, location: value })}
+          value={showSearch.location}
+          onChange={(location) => setShowSearch({ ...showSearch, location})}
           allowClear
-          style={{ width: "20%", marginTop: "10px", marginBottom: "15px", marginRight: "20px" }}
+          style={{ width: "30%", marginTop: "10px", marginBottom: "15px", marginRight: "20px" }}
         >
           {locations.map((location, index) => (
             <Select.Option key={index} value={location}>

@@ -148,11 +148,56 @@
 },
 {
         "reviewId" : 18,
-        "rating" : 5,
+        "rating" : 4.5,
         "review" : "Akshay kumar, Tiger shroff redefine heroism!",
         "category": "movie",
         "categoryId" : 18,
         "userId": 1   
+    
+},
+{
+        "reviewId" : 18,
+        "rating" : 3.5,
+        "review" : "Akshay kumar, Tiger shroff redefine heroism!",
+        "category": "movie",
+        "categoryId" : 18,
+        "userId": 2   
+    
+},
+{
+        "reviewId" : 18,
+        "rating" : 5,
+        "review" : "#blockBuster",
+        "category": "movie",
+        "categoryId" : 18,
+        "userId": 3   
+    
+},
+{
+        "reviewId" : 18,
+        "rating" : 5,
+        "review" : "Bade Miyan Chote Miyan offers you with a delightful camaraderie of Akshay Kumar and Tiger Shroff sprinkled with playful banter and action sequences done to it's best. ",
+        "category": "movie",
+        "categoryId" : 18,
+        "userId": 4   
+    
+},
+{
+        "reviewId" : 18,
+        "rating" : 5,
+        "review" : "Akshay Kumar, Tiger Shroff-starrer Bade Miyan Chote Miyan is a tour de force of cinematic excellence. With its stellar cast, gripping storyline, and breath-taking action sequences",
+        "category": "movie",
+        "categoryId" : 18,
+        "userId": 5   
+    
+},
+{
+        "reviewId" : 18,
+        "rating" : 4,
+        "review" : "Akshay Kumar and Tiger Shroff's fun banters are pure gold. Prithviraj Sukumaran's evil act keeps you on the edge.",
+        "category": "movie",
+        "categoryId" : 18,
+        "userId": 6   
     
 }
 ]

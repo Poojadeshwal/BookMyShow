@@ -3,7 +3,7 @@
     { 
     "movieId":12, 
     "movieName":"Shaitan", 
-    "moviePoster":"/assets/movie-images/Shaitan.jpg", 
+    "moviePoster":"/assets/movie-images/Shaitaan.avif", 
     "languages":["Hindi","Tamil"], 
     "duration": "2hr 22min", 
     "genres": ["Supernatural", "Thriller"], 
@@ -64,7 +64,7 @@
     { 
     "movieId":13, 
     "movieName":"Kung Fu Panda 4", 
-    "moviePoster":"/assets/movie-images/kungFuu.jpg", 
+    "moviePoster":"/assets/movie-images/KungFuPanda.avif", 
     "languages":["Hindi","English","Tamil","Telugu"], 
     "duration": "1hr 33min", 
     "genres": ["Animation","Comedy","Adventure"], 
@@ -112,7 +112,7 @@
     { 
     "movieId":14, 
     "movieName":"Godzilla x Kong: The New Empire", 
-    "moviePoster": "/assets/movie-images/Godzila.jpg", 
+    "moviePoster": "/assets/movie-images/Godzilaaa.avif", 
     "languages":["Hindi","English","Tamil","Telugu"],
     "duration": "1hr 54min", 
     "genres": ["Action","Thriller","Sci-Fi"], 
@@ -159,7 +159,7 @@
     { 
     "movieId":15, 
     "movieName":"Article 370", 
-    "moviePoster":"/assets/movie-images/article370.jpg ", 
+    "moviePoster":"/assets/movie-images/Article370.avif ", 
     "languages":["Hindi"], 
     "duration": "2hr 40min", 
     "genres": ["Drama","Political"], 
@@ -206,7 +206,7 @@
     { 
     "movieId":16, 
     "movieName":"Yodha", 
-    "moviePoster":"/assets/movie-images/Yodha.jpg", 
+    "moviePoster":"/assets/movie-images/Yodhaa.avif", 
     "languages":["Hindi"], 
     "duration": "2hr 13mins", 
     "genres": ["Action","Thriller"], 
@@ -230,7 +230,7 @@
     { 
     "movieId":17, 
     "movieName":"Madgaon Express", 
-    "moviePoster":"/assets/movie-images/MadgaonExpress.jpg", 
+    "moviePoster":"/assets/movie-images/Madgaon.avif", 
     "languages":["Hindi"], 
     "duration": "2hr 25min", 
     "genres": ["Drama","Comedy"], 

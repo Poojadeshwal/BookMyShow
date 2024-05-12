@@ -1,4 +1,4 @@
-import { Modal, Input, Form, Select, DatePicker, Button } from "antd";
+import { Modal, Input, Form, Button } from "antd";
 import { addReviewFunction } from "../../../services/review/review";
 
 export default function AddReview({
@@ -46,7 +46,7 @@ export default function AddReview({
           form={form}
           autoComplete="off"
         >
-          <Form.Item
+          {/* <Form.Item
             label="Review Id"
             name="reviewId"
             rules={[
@@ -54,14 +54,14 @@ export default function AddReview({
             ]}
           >
             <Input />
-          </Form.Item>
+          </Form.Item> */}
 
           <Form.Item
             label="Rating"
             name="rating"
             rules={[{ required: true, message: "Please input your Rating!" }]}
           >
-            <Input />
+            <Input placeholder="Out of 5"/>
           </Form.Item>
 
           <Form.Item
@@ -101,7 +101,7 @@ export default function AddReview({
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" onClick={handleCancel}>
+            <Button type="primary" onClick={handleCancel} style={{marginRight:"20px"}}>
               Cancel
             </Button>
             <Button type="primary" htmlType="submit">

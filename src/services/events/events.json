@@ -1,360 +1,17 @@
-[
+[ 
     {
-        "eventId": 1,
-        "eventName": "Rajkumari by Nayab Midha - A Poetry Special",
-        "eventPoster": "assets/events/rajkumari.jpg",
-        "language": [ "Hindi","English","Urdu"],
-        "duration": "2hrs",
-        "genres": [ "Poetry"],
-        "venue": "Gaur City Mall: Noida",
-        "censorBoardRating": "16yrs+",
-        "date": ["28 April 2024","29 April 2024", "30 April 2024"],
+        "eventId" : 1,
+        "eventName" : "Rajkumari by Nayab Midha - A Poetry Special",
+        "eventPoster" :"/assets/events/rajkumari.jpg",
+        "language" : ["Hindi","English", "Urdu"],
+        "duration" : "2hrs",
+        "genres" : ["Poetry"],
+        "venue" : "Gaur City Mall: Noida",
+        "censorBoardRating" : "16yrs+",
+        "date": ["28 April 2024", "29 April 2024","30 April 2024"],
         "eventTime": ["04:00 PM"],
-<<<<<<< HEAD
-        "price": 499,
-        "eventImage": "assets/eventDetail/rajkumari.avif",
-        "artist": [
-            {
-                "artistId": 19,
-                "name": "Nayab Midha ",
-                "image": "/assets/artist-images/NayabMidha.jpg",
-                "role": [
-                    "Poetess",
-                    "Stand-Up Comedian"
-                ],
-                "born": "September13, 1996,",
-                "birthplace": "Sri Ganganagar, Rajasthan,India",
-                "about": "An engineer by profession and poet by passion, trying to make in the world of art, Nayab has been performing spoken word art for 3 years now, her latest poem Tum Khoobsurat ho touched 10Million views on facebook , her pieces are about shattering social norms that should not have existed at first place.",
-                "knownAs": " "
-            }
-        ]
-    },
-    {
-        "eventId": 2,
-        "eventName": "Kisi Ko Batana Mat By Anubhav Singh Bassi",
-        "eventPoster": "assets/events/anubhav.jpg",
-        "language": [ "Hindi"],
-        "duration": "1hr 40mins",
-        "genres": [ "Comedy"],
-        "venue": "TalKatora Stadium: Delhi",
-        "censorBoardRating": "18yrs+",
-        "date": [  "23 April 2024" ],
-        "eventTime": "08:00 PM",
-        "price": 599,
-        "eventImage": "assets/eventDetail/anubhavSingh.avif",
-        "artist": [
-            {
-                "artistId": 11,
-                "name": "Anubhav Singh Bassi",
-                "image": "/assets/artist-images/Anubhav-Singh-Bassi.jpg",
-                "role": [
-                    "Actor",
-                    "YouTuber",
-                    "Stand-Up Comedian"
-                ],
-                "born": "January9, 1991",
-                "birthplace": "Parikshitgarh, Uttar Pradesh, India",
-                "about": "A lawyer-turned-UPSC aspirant-turned-entrepreneur-turned-comic, Anubhav Bassi is finally doing something productive after many failures because he thinks that his failures are his achievements. A perfect storyteller who makes fun of himself and everything that has come in his way till date. His style of comedy is interestingly natural with the whole act that seems like a casual conversation with hilarious content. One of the best stand-up comedians of the next gen.",
-                "knownAs": "Bassi"
-            }
-        ]
-    },
-    {
-        "eventId": 3,
-        "eventName": "Jo Bolta Hai Wohi Hota Hai Ft. Harsh Gujral",
-        "eventPoster": "assets/events/harsh.jpg",
-        "language": [
-            "Hindi",
-            "English"
-        ],
-        "duration": "1hr 30mins",
-        "genres": [
-            "Comedy"
-        ],
-        "venue": "The Gully Cafe: Gurugram",
-        "censorBoardRating": "16yrs+",
-        "date": [
-            "12 April 2024"
-        ],
-        "eventTime": "07:00 PM",
-        "price": 999,
-        "eventImage": "assets/eventDetail/harsh.avif",
-        "artist": [
-            {
-                "artistId": 12,
-                "name": "Harsh Gujral",
-                "image": "/assets/artist-images/HarshGujral.jpg",
-                "role": [
-                    "Stand-Up Comedian"
-                ],
-                "born": "September 17, 1993.",
-                "birthplace": "Kanpur, Uttar Pradesh, India",
-                "about": "Harsh is a Dabangg guy from Kanpur who cracks jokes on his life experiences. With a strong personality, he also has strong comedy sets to tickle your funny bones",
-                "knownAs": "Sasta Vicky Kaushal "
-            }
-        ]
-    },
-    {
-        "eventId": 4,
-        "eventName": "World Jazz Festival-Delhi",
-        "eventPoster": "assets/events/jazz.jpg",
-        "language": [
-            "English"
-        ],
-        "duration": "3hrs",
-        "genres": [
-            "Jazz"
-        ],
-        "venue": "Bailey's Diner: Gurugram",
-        "censorBoardRating": "8yrs+",
-        "date": [
-            "20 April 2024"
-        ],
-        "eventTime": "02:00 PM",
-        "price": 750,
-        "eventImage": "assets/eventDetail/worldJaz.avif"
-    },
-    {
-        "eventId": 5,
-        "eventName": "BMW Joytown 2024",
-        "eventPoster": "assets/events/joyTown.jpg",
-        "language": [
-            "English",
-            "Hindi",
-            "Punjabi"
-        ],
-        "duration": "6hrs",
-        "genres": [
-            "Bollywood",
-            "EDM",
-            "International"
-        ],
-        "venue": "SohoClub: Delhi",
-        "censorBoardRating": "3yrs+",
-        "date": [
-            "10 April 2024",
-            "11 April 2024",
-            "12 April 2024"
-        ],
-        "eventTime": "05:00 PM",
-        "price": 1099,
-        "eventImage": "assets/eventDetail/joy.avif",
-        "artist": [
-            {
-                "artistId": 4,
-                "name": "Diljit Dosanjh ",
-                "image": "/assets/artist-images/Diljit-Dosanjh.jpg",
-                "role": [
-                    "Indian Singer",
-                    "Song Writer",
-                    "Actor",
-                    "Film Producer",
-                    "Television Personality"
-                ],
-                "born": "January 6, 1984",
-                "birthplace": "Jalandhar, Punjab, India",
-                "about": "Daljit Dosanjh, now known as Diljit Dosanjh, is an award-winning Indian film actor, television presenter and one of the leading music artists in Punjab, who released his first music album Ishq Da Uda Ada in 2000. He made his debut in the Punjabi film industry in 2011 with the movie The Lion of Punjab and entered Bollywood with Abhishek Chaubey`s 2016 release Udta Punjab. He has won various accolades for his contributions to the music and the film industry.",
-                "knownAs": "Daljit Singh Dosanjh, Diljit"
-            }
-        ]
-    },
-    {
-        "eventId": 6,
-        "eventName": "Main Shayar Toh Nahin ft Manhar Seth",
-        "eventPoster": "assets/events/manharSeth.jpg",
-        "language": [
-            "English",
-            "Hindi",
-            "Punjabi"
-        ],
-        "duration": "1hr 30mins",
-        "genres": [
-            "Comedy"
-        ],
-        "venue": "Punjabi Bagh Club: Delhi",
-        "censorBoardRating": "16yrs+",
-        "date": [
-            "10 April 2024"
-        ],
-        "eventTime": "06:00 PM",
-        "price": 999,
-        "eventImage": "assets/eventDetail/mainShayar.avif",
-        "artist": [
-            {
-                "artistId": 20,
-                "name": "Manhar Seth ",
-                "image": "/assets/artist-images/ManharSeth.jpg",
-                "role": [
-                    "Poet",
-                    "Stand-Up Comedian"
-                ],
-                "born": "August 27, 1998",
-                "birthplace": "New Delhi, India",
-                "about": "Manhar Seth is an upcoming stand-up comedian",
-                "knownAs": " "
-            }
-        ]
-    },
-    {
-        "eventId": 7,
-        "eventName": "PokerBaazi Presents Sagar Wali Qawwali",
-        "eventPoster": "assets/events/sagarwali.jpg",
-        "language": [
-            "Hindi"
-        ],
-        "duration": "2hrs",
-        "genres": [
-            "Sufi"
-        ],
-        "venue": "Mall of Faridabad",
-        "censorBoardRating": "16yrs+",
-        "date": [
-            "25 April 2024",
-            "26 April 2024",
-            "27 April 2024"
-        ],
-        "eventTime": "07:00 PM",
-        "price": 899,
-        "eventImage": "assets/eventDetail/sagar.avif",
-        "artist": [
-            {
-                "artistId": 24,
-                "name": "Sagar Bhatia",
-                "image": "/assets/artist-images/SagarBhatia.jpg",
-                "role": [
-                    "Singer",
-                    "Composer"
-                ],
-                "born": "January 1, 1970",
-                "birthplace": "",
-                "about": "Sagar Bhatia, a renowned qawwali artist and dynamic performer from Delhi, India, hails from a family with a rich musical heritage. Exposed to the magic of qawwali from a young age, Sagar embarked on his journey as a qawwali artist at 15. With a passion for singing and innate musical talent, he has captivated audiences across India and beyond for over a decade.Sagar's performances are characterized by his powerful voice, soulful singing, and unmatched energy on stage. He has graced prestigious events and venues, including the Delhi International Arts Festival and the Sufi festival at Ajmer Sharif.",
-                "knownAs": " "
-            }
-        ]
-    },
-    {
-        "eventId": 8,
-        "eventName": "Lemons & Peaches ft. Gursimran Khamba",
-        "eventPoster": "assets/events/gaursimran.jpg",
-        "language": [
-            "Hindi",
-            "English"
-        ],
-        "duration": "2hr",
-        "genres": [
-            "Comedy"
-        ],
-        "venue": "MicDrop 2.0: Delhi",
-        "censorBoardRating": "18yrs+",
-        "date": [
-            "18 April 2024",
-            "19 April 2024",
-            "20 April 2024"
-        ],
-        "eventTime": "05:00 PM",
-        "price": 499,
-        "eventImage": "assets/eventDetail/lemon.avif",
-        "artist": [
-            {
-                "artistId": 13,
-                "name": "Gursimran Khamba",
-                "image": "/assets/artist-images/GursimranKhamba.jpg",
-                "role": [
-                    "Stand-Up Comedian"
-                ],
-                "born": "April 24, 1987",
-                "birthplace": "Delhi, India",
-                "about": "Gursimran Khamba is a writer, stand-up comic, podcaster, script consultant, creative director, producer, commentator and co-founder of India's biggest comedy collective All India Bakchod. Gursimran is also one of the first stand-up comedians to do edgy political comedy on stage. He has performed over 400 shows across the country and countries such as UK, Australia, UAE, etc. His comedy is usually centered on current affairs and politics mixed with stories from his own life.Gursimran Khambas latest venture is called Light@27 a comedy consulting firm that provides multiple services in the live and digital content space. This includes developing feature films and shows for OTTs and production houses across fiction and non-fiction. Script doctoring, script consulting, content and social media strategy for OTTs and brands. Scripting and comedian for hire services for live events and much more.",
-                "knownAs": "Khamba"
-            }
-        ]
-    },
-    {
-        "eventId": 9,
-        "eventName": "Qawwali by Nizami Bandhu",
-        "eventPoster": "assets/events/nizam.jpg",
-        "language": [
-            "Hindi"
-        ],
-        "duration": "1hr",
-        "genres": [
-            "Indian Classical"
-        ],
-        "venue": "kamani Auditorium: Delhi",
-        "censorBoardRating": "3yrs+",
-        "date": [
-            "20 April 2024",
-            "21 April 2024",
-            "22 April 2024"
-        ],
-        "eventTime": "05:00 PM",
-        "price": 599,
-        "eventImage": "assets/eventDetail/nizami.avif",
-        "artist": [
-            {
-                "artistId": 25,
-                "name": "Nizami Bandhu",
-                "image": "/assets/artist-images/NizamiBandhu.jpg",
-                "role": [
-                    "Singer",
-                    "Composer"
-                ],
-                "born": "",
-                "birthplace": "",
-                "about": "The Nizami Bandhu has a 700-year old rich legacy which they have upheld through centuries of dedication and tireless striving to perfection. They embraced Qawaali, 7 centuries back and since then, have contributed to the growth of this soulful genre of Sufism taking it to greater heights and securing its firm ground in the forum of world music.The Nizami Bandhu hails from the legendary and lustrous Sikandra Gharana which has produced some of the finest gems of Qawaali singers over the ages, best known for their versatility and serenity that have reflected in their songs. The responsibility of carrying the legacy forward is presently being shouldered by Ustad Chand Nizami, Shadab Faridi Nizami and Sohrab Faridi Nizami. They are also known as the Nizami Brothers.Awards &amp; Accolades: The band has been awarded the prestigious Indian Icon Award and the Rajiv Gandhi Global Excellence Award.Apart from performing in several prestigious musical events, such as the Jahaan E Khusro festival and the Qutub Festival in Delhi, Virasat Festival in Dehradun, Udhatan Music Festival in Bombay and the prestigious ITC Sangeet Research Academy in Kolkata, their music has been well received in many international concerts spreading across the USA, Germany, France, Canada, West Indies, Morocco, England, Tanzania etc.They have also been endowed with the honour of performing in the Sharad Festival as well as the Moroccan Festival this year which is one of the largest and prestigious music festivals in the world.The band has been awarded the prestigious Indian Icon Award and the Rajiv Gandhi Global Excellence Award.At the Movies: Amidst all of their achievements, another very prominent one has been sharing screen space with Ranbir Kapoor in the song Kun Faya Kun in the 2011 blockbuster Rockstar honouring the request of Imtiaz Ali, one of their great admirers. They have also lent their voice in one song Aaj Rang Hain from Bajrangi Bhaaijaan, the Salman Khan starrer blockbuster.They have dedicated their efforts not only to promote Qawaali as a form of heritage traditional music but also as a way of life transcending religious barriers and reaffirming the virtues of love, tolerance and faith.",
-                "knownAs": " "
-            }
-        ]
-    },
-    {
-        "eventId": 10,
-        "eventName": "Youth Speak Forum 2024",
-        "eventPoster": "assets/events/youthforum.jpg",
-        "language": [
-            "English",
-            "Hindi"
-        ],
-        "duration": "9hrs",
-        "genres": [
-            "Education",
-            "Technology"
-        ],
-        "venue": "Sirifort Auditorium: Delhi",
-        "censorBoardRating": "18yrs+",
-        "date": [
-            "20 April 2024"
-        ],
-        "eventTime": "10:00 AM",
-        "price": 300,
-        "eventImage": "assets/eventDetail/youthSpeaker.avif",
-        "artist": []
-    },
-    {
-        "eventId": 11,
-        "eventName": "Pottery Painting",
-        "eventPoster": "assets/events/pottery.jpg",
-        "language": [
-            "English",
-            "Hindi"
-        ],
-        "duration": "1hr",
-        "genres": [
-            "Workshop"
-        ],
-        "venue": "Dogra Hall: Delhi",
-        "censorBoardRating": "3yrs+",
-        "date": [
-            "21 April 2024"
-        ],
-        "eventTime": "11:00 AM",
-        "price": 300,
-        "eventImage": "assets/eventDetail/pottery.avif",
-        "artist": []
-    }
-]
-=======
         "price" : 499,
-        "eventImage": "assets/eventDetail/rajkumari.avif",
+        "eventImage": "/assets/eventDetail/rajkumari.avif",
         "artist":[{
             "artistId": 19,
         "name": "Nayab Midha ",
@@ -372,7 +29,7 @@
 {
     "eventId" : 2,
     "eventName" : "Kisi Ko Batana Mat By Anubhav Singh Bassi",
-    "eventPoster" : "assets/events/anubhav.jpg",
+    "eventPoster" : "/assets/events/anubhav.jpg",
     "language" : ["Hindi"],
     "duration" : "1hr 40mins",
     "genres" : ["Comedy"],
@@ -381,7 +38,7 @@
     "date": ["23 April 2024"],
     "eventTime": "08:00 PM",
     "price": 599,
-    "eventImage" : "assets/eventDetail/anubhavSingh.avif",
+    "eventImage" : "/assets/eventDetail/anubhavSingh.avif",
     "artist":[{
         "artistId": 11,
         "name": "Anubhav Singh Bassi",
@@ -400,7 +57,7 @@
 {
     "eventId" : 3,
     "eventName" : "Jo Bolta Hai Wohi Hota Hai Ft. Harsh Gujral",
-    "eventPoster" : "assets/events/harsh.jpg",
+    "eventPoster" : "/assets/events/harsh.jpg",
     "language" : ["Hindi", "English"],
     "duration" : "1hr 30mins",
     "genres" : ["Comedy"],
@@ -409,7 +66,7 @@
     "date": ["12 April 2024"],
     "eventTime": "07:00 PM",
     "price": 999,
-    "eventImage": "assets/eventDetail/harsh.avif",
+    "eventImage": "/assets/eventDetail/harsh.avif",
     "artist":[{
         "artistId": 12,
         "name": "Harsh Gujral",
@@ -426,7 +83,7 @@
 {
     "eventId" : 4,
     "eventName" : "World Jazz Festival-Delhi",
-    "eventPoster" : "assets/events/jazz.jpg",
+    "eventPoster" : "/assets/events/jazz.jpg",
     "language" : ["English"],
     "duration" : "3hrs",
     "genres" : ["Jazz"],
@@ -435,12 +92,41 @@
     "date": ["20 April 2024"],
     "eventTime": "02:00 PM",
     "price": 750,
-    "eventImage":"assets/eventDetail/worldJaz.avif"
+    "eventImage":"/assets/eventDetail/worldJaz.avif",
+    "artist":[{
+        "artistId": 40,
+        "name": "Sarathy Korwar",
+        "image": "/assets/artist-images/Sarathy.jpg",
+        "role": [
+            "Drummer","Composer", "Brandleader"
+        ]
+    }, {
+        "artistId": 41,
+        "name": "Tom Van der Zaal Quintet ",
+        "image": "/assets/artist-images/Tom.jpg",
+        "role": [
+            "Jazz Saxophonist"
+        ]
+    },  {
+        "artistId": 42,
+        "name": "Ben Van den Dungen",
+        "image": "/assets/artist-images/ben.jpg",
+        "role": [
+            "Jazz Saxophonist"
+        ]
+    }, {
+        "artistId": 43,
+        "name": "Alexander Hurricane Beets",
+        "image": "/assets/artist-images/alexander.jpg",
+        "role": [
+            "Jazz Saxophonist"
+        ]
+    }]
 },
 {
     "eventId" : 5,
     "eventName" : "BMW Joytown 2024",
-    "eventPoster" :"assets/events/joyTown.jpg",
+    "eventPoster" :"/assets/events/joyTown.jpg",
     "language" : ["English","Hindi","Punjabi"],
     "duration" : "6hrs",
     "genres" : ["Bollywood","EDM", "International"],
@@ -449,7 +135,7 @@
     "date": ["10 April 2024","11 April 2024", "12 April 2024"],
     "eventTime": "05:00 PM",
     "price": 1099,
-    "eventImage": "assets/eventDetail/joy.avif",
+    "eventImage": "/assets/eventDetail/joy.avif",
     "artist":[{
         "artistId": 4,
         "name": "Diljit Dosanjh ",
@@ -465,12 +151,19 @@
         "birthplace": "Jalandhar, Punjab, India",
         "about": "Daljit Dosanjh, now known as Diljit Dosanjh, is an award-winning Indian film actor, television presenter and one of the leading music artists in Punjab, who released his first music album Ishq Da Uda Ada in 2000. He made his debut in the Punjabi film industry in 2011 with the movie The Lion of Punjab and entered Bollywood with Abhishek Chaubey`s 2016 release Udta Punjab. He has won various accolades for his contributions to the music and the film industry.",
         "knownAs": "Daljit Singh Dosanjh, Diljit"
+    }, {
+        "artistId": 35,
+        "name": "The Chainsmoker",
+        "image": "/assets/artist-images/chainsmoker.jpg",
+        "role": [
+            "DJ Player"
+        ]
     }]
 }, 
 {
     "eventId" : 6,
     "eventName" : "Main Shayar Toh Nahin ft Manhar Seth",
-    "eventPoster" : "assets/events/manharSeth.jpg",
+    "eventPoster" : "/assets/events/manharSeth.jpg",
     "language" : ["English","Hindi","Punjabi"],
     "duration" : "1hr 30mins",
     "genres" : ["Comedy"],
@@ -479,7 +172,7 @@
     "date": ["10 April 2024"],
     "eventTime": "06:00 PM",
     "price": 999,
-    "eventImage": "assets/eventDetail/mainShayar.avif",
+    "eventImage": "/assets/eventDetail/mainShayar.avif",
     "artist":[{
         "artistId": 20,
         "name": "Manhar Seth ",
@@ -497,7 +190,7 @@
 {
     "eventId" : 7,
     "eventName" : "PokerBaazi Presents Sagar Wali Qawwali",
-    "eventPoster" : "assets/events/sagarwali.jpg",
+    "eventPoster" : "/assets/events/sagarwali.jpg",
     "language" : ["Hindi"],
     "duration" : "2hrs",
     "genres" : ["Sufi"],
@@ -506,7 +199,7 @@
     "date": ["25 April 2024", "26 April 2024", "27 April 2024"],
     "eventTime": "07:00 PM",
     "price": 899,
-    "eventImage": "assets/eventDetail/sagar.avif",
+    "eventImage": "/assets/eventDetail/sagar.avif",
     "artist":[{
         "artistId": 24,
         "name": "Sagar Bhatia",
@@ -524,7 +217,7 @@
 {
     "eventId" : 8,
     "eventName" : "Lemons & Peaches ft. Gursimran Khamba",
-    "eventPoster" : "assets/events/gaursimran.jpg",
+    "eventPoster" : "/assets/events/gaursimran.jpg",
     "language" : ["Hindi", "English"],
     "duration" : "2hr",
     "genres" : ["Comedy"],
@@ -533,7 +226,7 @@
     "date":["18 April 2024", "19 April 2024","20 April 2024"],
     "eventTime": "05:00 PM",
     "price": 499,
-    "eventImage": "assets/eventDetail/lemon.avif",
+    "eventImage": "/assets/eventDetail/lemon.avif",
     "artist":[{
         "artistId": 13,
         "name": "Gursimran Khamba",
@@ -550,7 +243,7 @@
 {
     "eventId" : 9,
     "eventName" : "Qawwali by Nizami Bandhu",
-    "eventPoster" : "assets/events/nizam.jpg",
+    "eventPoster" : "/assets/events/nizam.jpg",
     "language" : ["Hindi"],
     "duration" : "1hr",
     "genres" : ["Indian Classical"],
@@ -559,7 +252,7 @@
     "date": ["20 April 2024","21 April 2024","22 April 2024"],
     "eventTime": "05:00 PM",
     "price": 599,
-    "eventImage": "assets/eventDetail/nizami.avif",
+    "eventImage": "/assets/eventDetail/nizami.avif",
     "artist":[{
         "artistId": 25,
         "name": "Nizami Bandhu",
@@ -577,7 +270,7 @@
 {
     "eventId" : 10,
     "eventName" : "Youth Speak Forum 2024",
-    "eventPoster" : "assets/events/youthforum.jpg",
+    "eventPoster" : "/assets/events/youthforum.jpg",
     "language" : ["English","Hindi"],
     "duration" : "9hrs",
     "genres" : [ "Education", "Technology"],
@@ -586,13 +279,35 @@
     "date": ["20 April 2024"],
     "eventTime": "10:00 AM",
     "price": 300,
-    "eventImage": "assets/eventDetail/youthSpeaker.avif",
-    "artist":[]
+    "eventImage": "/assets/eventDetail/youthSpeaker.avif",
+    "artist":[{
+        "artistId": 36,
+        "name": "Anjana Om Kashyap",
+        "image": "/assets/artist-images/anjanakashyap.jpg",
+        "role": [
+            "Tv Anchor"
+        ]
+    },
+    {
+        "artistId": 37,
+        "name": "Sandeep Jain",
+        "image": "/assets/artist-images/sandeepJain.jpg",
+        "role": [
+            "Founder of GeeksOfGeeks"
+        ]
+    },  {
+        "artistId": 38,
+        "name": "Shiv Khera",
+        "image": "/assets/artist-images/shivkhera.jpg",
+        "role": [
+            "Author"
+        ]
+    }]
 }, 
 {
     "eventId" : 11,
     "eventName" : "Pottery Painting",
-    "eventPoster" : "assets/events/pottery.jpg",
+    "eventPoster" : "/assets/events/pottery.jpg",
     "language" : ["English","Hindi"],
     "duration" : "1hr",
     "genres" : ["Workshop"],
@@ -601,9 +316,80 @@
     "date": ["21 April 2024"],
     "eventTime": "11:00 AM",
     "price": 300,
-    "eventImage": "assets/eventDetail/pottery.avif",
-    "artist":[]
+    "eventImage": "/assets/eventDetail/pottery.avif",
+    "artist":[{
+        "artistId": 39,
+        "name": "Brahmdeo Ram Pandit",
+        "image": "/assets/artist-images/Brahmdeo.jpg",
+        "role": [
+            "Potter"
+        ]
+    }]
+},{
+    "eventId" : 19,
+    "eventName" : "The Late Night Comedy Show",
+    "eventPoster" : "/assets/events/nightshows.jpg",
+    "language" : ["English","Hindi"],
+    "duration" : "3hr",
+    "genres" : ["Comedy"],
+    "venue" : "Guftagu Cafe, Gurugram",
+    "censorBoardRating" : "3yrs+",
+    "date": ["05 May 2024"],
+    "eventTime": "11:00 PM",
+    "price": 300,
+    "eventImage": "/assets/eventDetail/latenightshow.avif",
+    "artist":[{
+            "artistId": 44,
+            "name": "Inder Sahani",
+            "image": "/assets/artist-images/inder.avif",
+            "role": [
+                "Comedian"
+            ]
+        },
+        {
+            "artistId": 45,
+            "name": "Maheep Singh",
+            "image": "/assets/artist-images/maheep.avif",
+            "role": [
+                "Comedian"
+            ]
+        },
+        {
+            "artistId": 47,
+            "name": "Ravi Gupta",
+            "image": "/assets/artist-images/raviGupta.jpg",
+            "role": [
+                "Comedian"
+            ]
+        },  {
+            "artistId": 48,
+            "name": "Shreya Priyam",
+            "image": "/assets/artist-images/shreyaPriyam.avif",
+            "role": [
+               "Comedian"
+            ]
+        } , {
+            "artistId": 49,
+            "name": "Vaibhav Arora",
+            "image": "/assets/artist-images/vaibhavArora.avif",
+            "role": [
+                "Comedian"
+            ]
+        }, {
+            "artistId": 50,
+            "name": "Vikas Kush Sharma",
+            "image": "/assets/artist-images/vikas.avif",
+            "role": [
+                "Comedian"
+            ]
+        }, {
+            "artistId": 51,
+            "name": "Madhur Virli",
+            "image": "/assets/artist-images/madhur.jpg",
+            "role": [
+                "Comedian"
+            ]
+        }
+    ]
 }
 ]
-
->>>>>>> 90ef61c41a9e842fcb8729d2aaa5a18850672739

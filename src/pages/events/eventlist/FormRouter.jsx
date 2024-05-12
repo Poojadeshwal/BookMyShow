@@ -4,22 +4,28 @@ import { ExclamationCircleFilled } from "@ant-design/icons";
 import CreateUpdate from "./CreateUpdate";
 import EventListPage from "./EventListPage";
 import { removeFunction } from "../../../services/events/events";
+import moment from "moment";
+
 
 export default function FormRouter({ setEvent, next }) {
   const [updatedCount, setUpdatedCount] = useState(0);
   const [isModelOpen, setIsModalOpen] = useState(false);
   const [form] = Form.useForm();
 
+  console.log("form")
   const showModal = () => {
     setIsModalOpen(true);
   };
 
   const handleOk = () => {
     setIsModalOpen(false);
+    initFormData();
   };
 
   const handleCancel = () => {
     setIsModalOpen(false);
+    payload.current.data = {};
+    initFormData();
   };
 
   const handleDelete = (eventId) => {
@@ -42,14 +48,23 @@ export default function FormRouter({ setEvent, next }) {
     data: {},
   });
 
-  console.log("check1", payload.current.data);
-
   const initFormData = () => {
-    payload.current.data
-      ? form.setFieldsValue(payload.current.data)
-      : form.resetFields();
+    // console.log("check1", payload.current.data);
+    // payload.current.data.eventId
+    //   ? form.setFieldsValue(payload.current.data)
+    //   : form.resetFields();
+    if(payload.current.data.eventId){
+      payload.current.data = {
+        ...payload.current.data, 
+        date: payload.current.data.date.map(date => moment(date, "DD MMM YYYY")),
+      }
+      // console.log("artist", payload)
+      form.setFieldsValue(payload.current.data)
+    }else{
+      form.resetFields();
+    }
   };
-  console.log(payload.current.data);
+  // console.log(payload.current.data);
 
   return (
     <>
@@ -60,7 +75,6 @@ export default function FormRouter({ setEvent, next }) {
         handleOk={handleOk}
         handleCancel={handleCancel}
         isModalOpen={isModelOpen}
-        setEvent={setEvent}
         initFormData={initFormData}
       />
 
