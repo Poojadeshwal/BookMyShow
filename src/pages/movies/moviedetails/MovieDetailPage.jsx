@@ -63,7 +63,7 @@ const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
     //     //             setMovieDetails(data);
     //     //           })
     // }, [])
-    const selectedMovie = parseInt(movieId);
+    const selectedMovie = +(movieId);
     useEffect(()=>{
      console.log("called")
      moviesDetailFunction(selectedMovie, "movieId").then((detail)=>{

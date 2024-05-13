@@ -236,13 +236,12 @@ export default function CreateUpdate({
           </Form.Item>
           <Form.Item>
             <Button
-              type="primary"
+              style={{backgroundColor:"rgb(220, 53, 75)", color:"white", marginRight: "10px" }}
               onClick={handleCancel}
-              style={{ marginRight: "10px" }}
             >
               {labelDetail("cancel")}
             </Button>
-            <Button type="primary" htmlType="submit">
+            <Button style={{backgroundColor:"rgb(220, 53, 75)", color:"white" }} htmlType="submit">
               {payload.current.operation === "ADD"
                 ? labelDetail("addEvent")
                 : labelDetail("updateEvent")}

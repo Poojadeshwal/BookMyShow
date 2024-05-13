@@ -231,10 +231,10 @@ export default function CreateUpdate({
       )}
     </Form.List>
                 <Form.Item>
-            <Button type="primary" onClick={handleCancel}>
+            <Button style={{backgroundColor:"rgb(220, 53, 75)", color:"white" }} onClick={handleCancel}>
              {labels("Cancel")} 
             </Button>
-            <Button type="primary" htmlType="submit">
+            <Button style={{backgroundColor:"rgb(220, 53, 75)", color:"white" }} htmlType="submit">
             {payload.current.operation === "ADD" ? "Add Movie" : "Update Movie"}
           </Button>
 

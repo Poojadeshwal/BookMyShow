@@ -126,12 +126,14 @@ export default function BookingConfirmed() {
               </Typography.Title>
              <Typography.Title level={5} style={{marginTop:"-5px"}}>Tickets: <span style={{marginLeft:"50%"}}>{bookingData?.tickets}</span></Typography.Title>
               <Typography.Title level={5} style={{marginTop:"-5px"}}>
-                Date: <span style={{ marginLeft: "50%" }}>{bookingData?.date}</span>
+                Date: <span style={{ marginLeft: "55%" }}>{bookingData?.date}</span>
                 </Typography.Title> 
             <Typography.Title level={5} style={{marginTop:"-5px"}}> Time: <span style={{ marginLeft: "55%" }}>{bookingData?.timing}</span></Typography.Title>
             <Typography.Title level={5} style={{marginTop:"-5px"}}>Price: <span style={{ marginLeft: "55%" }}>₹{bookingData?.price}</span></Typography.Title>
-            <Typography.Title level={5} style={{marginTop:"-5px"}}>Seat Number:<span style={{ marginLeft: "37%" }}>{bookingData?.seatNumber}</span></Typography.Title> 
-              <Typography.Title level={2} style={{ marginLeft: "5px", color: "rgb(220, 53, 75)"}}>
+            
+            <Typography.Title level={5} style={{marginTop:"-5px"}}>Seat Number:<span style={{ marginLeft: "37%" }}>{bookingData?.seatNumber.join(' , ')}</span></Typography.Title> 
+          
+             <Typography.Title level={2} style={{ marginLeft: "5px", color: "rgb(220, 53, 75)"}}>
                 Total Price{" "}
                 <span style={{ marginLeft: "25%"}}>
                   ₹ {bookingData?.totalPrice}

@@ -21,7 +21,7 @@ const filterShows = (shows, showSearch) => {
 };
 const ShowsList = ({ showSearch, shows, events, showModal, payload,  initFormData, movies}) => {
 
-
+ 
   const [filteredShow, setFilteredShow] = useState(null);
  
   // console.log("show checking",shows);

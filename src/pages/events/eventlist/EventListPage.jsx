@@ -20,6 +20,9 @@ export default function EventListPage({
     
   const queryParams = {};
   searchParams.forEach((value, key) => {
+      if(value === 'null') {
+        value = null;
+      }
       queryParams[key] = value;
   })
 
