@@ -3,6 +3,7 @@ import { Card, Typography } from 'antd';
 import { Col, Row } from 'antd';
 import Filters from "./FilterMovie";
 import Movies from "./MovieList";
+import { TranslateFunction } from "../../../utils/internalisation";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 const { Text, Paragraph, Title } = Typography;
 export default function MovieListPage({ onSelectMovie, onDelete,
@@ -13,7 +14,7 @@ export default function MovieListPage({ onSelectMovie, onDelete,
     initFormData,
     updatedCount }) {
 
-    
+        const labels = TranslateFunction("labels");
     const [searchParams, setSearchParams] = useSearchParams()
     
     const queryParams = {};
@@ -31,8 +32,8 @@ export default function MovieListPage({ onSelectMovie, onDelete,
         setSearchObj(searchObject)
     }
 
-    console.log('SearchObj', searchObj)
-    console.log('searchParams', searchParams)
+    // console.log('SearchObj', searchObj)
+    // console.log('searchParams', searchParams)
     //searchParams.get("__firebase_request_key")
 
 
@@ -49,7 +50,7 @@ export default function MovieListPage({ onSelectMovie, onDelete,
         <>
             {results && results.length > 0 ? (
                 <>
-                    <Typography.Title>Movies In Delhi-NCR</Typography.Title>
+                    <Typography.Title>{labels("Movies In Delhi-NCR")}</Typography.Title>
                     <Card style={{ backgroundColor: "white" }} >
 
 
@@ -73,7 +74,7 @@ export default function MovieListPage({ onSelectMovie, onDelete,
                 </>
             ) : (
                 <Card style={{ backgroundColor: "white" }} >
-                    <Typography.Title>Movies In Delhi-NCR</Typography.Title>
+                    <Typography.Title>{labels("Movies In Delhi-NCR")}</Typography.Title>
 
                     <Row gutter={[16, 16]}>
                         <Col span={6}>

@@ -5,7 +5,7 @@ import MainHeader from "../pages/homepage/MainHeader";
 import FooterFile from "../pages/homepage/FooterFile";
 import { BrowserRouter } from "react-router-dom";
 
-console.log("Users List", users)
+// console.log("Users List", users)
 
 const AuthContext = createContext();
 export const AuthData = () => useContext(AuthContext);

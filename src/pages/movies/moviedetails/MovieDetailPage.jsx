@@ -71,7 +71,7 @@ const MovieDetailPage = ({ back, movieId, onSelectArtist }) => {
        setMovieDetails(detail);
      })
     },[selectedMovie])
-   console.log(movieDetails,"details of movie")
+//    console.log(movieDetails,"details of movie")
     // let selectedMovie = null;
 
 

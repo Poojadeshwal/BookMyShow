@@ -12,8 +12,9 @@ export default function EventListPage({
   initFormData,
   updatedCount,
   handleDelete,
+  results
 }) {
-
+ 
   
   const [searchParams, setSearchParams] = useSearchParams()
     
@@ -22,7 +23,7 @@ export default function EventListPage({
       queryParams[key] = value;
   })
 
-  console.log("queryParams", queryParams)
+  // console.log("queryParams", queryParams)
 
   const [searchObj, setSearchObj] = useState(queryParams);
 
@@ -30,19 +31,39 @@ export default function EventListPage({
     setSearchParams(searchObject)
     setSearchObj(searchObject)
 }
-console.log('SearchObj', searchObj)
-console.log('searchParams', searchParams)
+// console.log('SearchObj', searchObj)
+// console.log('searchParams', searchParams)
 
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleSelectEvent = (eventId)=>{
-    console.log("select")
+    // console.log("select")
     navigate(`/event/${eventId}`, {state : {from: location}})
   }
 
   return (
+    <>
+ 
+    {results && results.length > 0 ? (
     <Row justify="space-between" gutter={[14, 14]} style={{ margin: 0 }}>
+      <Col span={18}>
+        <EventList
+          searchObj={searchObj}
+          next={next}
+          setEvent={setEvent}
+          payload={payload}
+          initFormData={initFormData}
+          updatedCount={updatedCount}
+          showModal = {showModal}
+          handleDelete={handleDelete}
+          onSelectEvent = {handleSelectEvent}
+          results={results}
+        />
+      </Col>
+    </Row>
+    ):(
+<Row justify="space-between" gutter={[14, 14]} style={{ margin: 0 }}>
       <FilterEventList searchObj={searchObj} setSearchObj={setSearchUrl} />
       <Col span={18}>
         <EventList
@@ -55,8 +76,11 @@ console.log('searchParams', searchParams)
           showModal = {showModal}
           handleDelete={handleDelete}
           onSelectEvent = {handleSelectEvent}
+          results={results}
         />
       </Col>
     </Row>
+    )}
+    </>
   );
 }

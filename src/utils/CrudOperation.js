@@ -13,17 +13,19 @@ let CrudOperation={
         })
 
     },
-    update:function (list,obj,pk){
-        return list.map((item)=>{
+    update: function(list, obj, pk){
+        let newArr =  list.map((item)=>{
+            console.log(item.eventId,obj.eventId,"surbhi")
             if(item[pk]==obj[pk]){
-            return obj[pk]
+                return obj; 
+            }else{
+                return item;
             }
-            else{
-            return item
-            }
-        })
-
-    },
+    
+            })
+            console.log("new",newArr);
+            return newArr;
+        },
       getDetail: function(list, id, pk) {
         console.log(id);
             console.log(pk)

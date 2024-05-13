@@ -12,7 +12,7 @@ const UI = {
 };
 
 const WrapperMovies = ({inputText,results}) => {
-    console.log('Shows Page Accessed')
+    // console.log('Shows Page Accessed', results)
    const [ui, setUI] = useState(UI.MovieListPage);
    const [selectedMovieId, setSelectedMovieId] = useState(null);
 

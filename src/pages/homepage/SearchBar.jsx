@@ -6,8 +6,11 @@ import WrapperMovies from '../movies/WrapperMovies';
 import Carousels from './Carousels';
 import ContentFile from './ContentFile';
 import { TranslateFunction } from '../../utils/internalisation';
+import { getFunction } from '../../services/events/events';
+import EventWrapper from '../events/EventWrapper';
 
 const SearchBar = ({ onSearch }) => {
+   
     const [search, setSearch] = useState('');
     const labels = TranslateFunction("labels");
     const handleChange = (e) => {
@@ -28,7 +31,7 @@ const SearchBar = ({ onSearch }) => {
         fullWidth
         
             // type="text"
-            placeholder="Search for Movies Event Artist and Sports Activities"
+            placeholder={labels("Search for Movies Event Artist and Sports Activities")}
             value={search}
             onChange={handleChange}
         />
@@ -66,42 +69,35 @@ const SearchBar = ({ onSearch }) => {
 
 
 const SearchApp = () => {
-    console.log("seracg")
+    // console.log("serach")
     const [list, setList] = useState(null);
 
     const [searchResultsMovies, setSearchResultsMovies] = useState([]);
     const [searchResultsArtist, setSearchResultsArtist] = useState([]);
+    const [searchResultsEvents, setSearchResultsEvents] = useState([]);
     const search = (searchQuery) => {
         // console.log("querry", searchQuery);
         if (searchQuery.length > 1) {
             Promise.all([
                 getArtist(),
                 getFunctions(),
+                getFunction()
                 
-            ]).then(([artists, movies]) => {
-                const combinedData = [...movies, ...artists];
-                console.log("combinedData", artists, movies, combinedData)
+            ]).then(([artists, movies, events]) => {
+                const combinedData = [...movies, ...artists,...events];
+                console.log("combinedData", artists, movies,events, combinedData)
 
                 const filteredMovieResults = movies.filter((item) => {
                     if (item.movieId) {
-                        console.log("if")
                         if (item.movieName.toLowerCase().includes(searchQuery.toLowerCase())) {
-                            console.log("mil gya")
-
                             return item;
                         }
-
                     }
-
-
                 })
                 setSearchResultsMovies(filteredMovieResults);
                 const filteredArtistResult = artists.filter((item) => {
                     if (item.artistId) {
-                        console.log("artist if")
                         if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-                            console.log("mil gya")
-
                             return item;
                         }
 
@@ -110,7 +106,14 @@ const SearchApp = () => {
                 })
                 setSearchResultsArtist(filteredArtistResult);
 
-
+                const filteredEventsResults = events.filter((item) => {
+                    if (item.eventId) {
+                        if (item.eventName.toLowerCase().includes(searchQuery.toLowerCase())) {
+                            return item;
+                        }
+                    }
+                })
+                setSearchResultsEvents(filteredEventsResults);
 
 
 
@@ -119,27 +122,32 @@ const SearchApp = () => {
         else {
             setSearchResultsMovies([])
             setSearchResultsArtist([])
+            setSearchResultsEvents([])
         }
     }
-    console.log("searchResultsArtist", searchResultsArtist)
-    console.log("searchResultsMovies", searchResultsMovies)
+    // console.log("searchResultsArtist", searchResultsArtist)
+    // console.log("searchResultsMovies", searchResultsMovies)
+    // console.log("searchResultsEvents", searchResultsEvents)
     return (
         <div>
            
             <SearchBar onSearch={search} />
             <br></br>
-            {((searchResultsMovies && searchResultsMovies.length > 0) || (searchResultsArtist && searchResultsArtist.length > 0)) ? (
+            {((searchResultsMovies && searchResultsMovies.length > 0) || (searchResultsArtist && searchResultsArtist.length > 0)||(searchResultsEvents && searchResultsEvents.length > 0)) ? (
                 <>
+                
                     {searchResultsMovies.length > 0 && <WrapperMovies results={searchResultsMovies} />}
                     {searchResultsArtist.length > 0  && <ArtistWrapper results={searchResultsArtist} />}
+                    {searchResultsEvents.length > 0 && <EventWrapper results={searchResultsEvents} />}
                 </>
             ) : (
                 <>
                      <Carousels/>
                     <WrapperMovies />
                     <ContentFile/>
+                    <EventWrapper/>
                     
-                    {/* <EventWrapper/> */}
+                 
                 </>
             )
             }

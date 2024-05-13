@@ -4,7 +4,8 @@ import { useState } from "react";
 import EventArtistWrapper from "./eventdetail/EventArtistWrapper";
 import FormRouter from "./eventlist/FormRouter";
 
-export default function EventWrapper() {
+export default function EventWrapper({results}) {
+
   const Ui = {
     EventListPage: "EventListPage",
     EventDetailPage: "EventDetailPage",
@@ -13,13 +14,13 @@ export default function EventWrapper() {
   const [currentUi, setCurrentUi] = useState(Ui.EventListPage);
   const [event, setEvent] = useState(null);
   
-  console.log("Wrapper", event)
   return (
     <>
       {currentUi === Ui.EventListPage && (
         <FormRouter
           next={() => setCurrentUi(Ui.EventDetailPage)}
           setEvent={setEvent}
+          results={results}
         />
       )}
       {currentUi === Ui.EventDetailPage && (

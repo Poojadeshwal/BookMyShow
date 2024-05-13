@@ -1,3 +1,4 @@
+
 [
     {
         "artistId":1,
@@ -435,6 +436,122 @@
         "birthplace": "Canada",
         "about": "Indo-Canadian dancer, actress and model Nora Fatehi made her acting debut in the 2013 Bollywood film Roar: Tigers of the Sundarbans, and has since been featured in several popular movies, primarily in special appearances and cameos. Notable among these are the Telugu action film Temper (2015), Baahubali: The Beginning (2015), the Bollywood action-thriller Rocky Handsome (2016), Oopiri (2017), My Birthday Song (2018) and Kayamkulam Kochunni (2018). Her other release includes Bharat, Batla House and Street Dancer 3.",
         "knownAs": " "
+    },
+    {
+        "artistId": 35,
+        "name": "The Chainsmoker",
+        "image": "/assets/artist-images/chainsmoker.jpg",
+        "role": [
+            "DJ Player"
+        ]
+    },
+    {
+        "artistId": 36,
+        "name": "Anjana Om Kashyap",
+        "image": "/assets/artist-images/anjanakashyap.jpg",
+        "role": [
+            "Tv Anchor"
+        ]
+    },
+    {
+        "artistId": 37,
+        "name": "Sandeep Jain",
+        "image": "/assets/artist-images/sandeepJain.jpg",
+        "role": [
+            "Founder of GeeksOfGeeks"
+        ]
+    },  {
+        "artistId": 38,
+        "name": "Shiv Khera",
+        "image": "/assets/artist-images/shivkhera.jpg",
+        "role": [
+            "Author"
+        ]
+    } , {
+        "artistId": 39,
+        "name": "Brahmdeo Ram Pandit",
+        "image": "/assets/artist-images/Brahmdeo.jpg",
+        "role": [
+            "Potter"
+        ]
+    }, {
+        "artistId": 40,
+        "name": "Sarathy Korwar",
+        "image": "/assets/artist-images/Sarathy.jpg",
+        "role": [
+            "Drummer","Composer", "Brandleader"
+        ]
+    }, {
+        "artistId": 41,
+        "name": "Tom Van der Zaal Quintet ",
+        "image": "/assets/artist-images/Tom.jpg",
+        "role": [
+            "Jazz Saxophonist"
+        ]
+    },  {
+        "artistId": 42,
+        "name": "Ben Van den Dungen",
+        "image": "/assets/artist-images/ben.jpg",
+        "role": [
+            "Jazz Saxophonist"
+        ]
+    }, {
+        "artistId": 43,
+        "name": "Alexander Hurricane Beets",
+        "image": "/assets/artist-images/alexander.jpg",
+        "role": [
+            "Jazz Saxophonist"
+        ]
+    },  {
+        "artistId": 44,
+        "name": "Inder Sahani",
+        "image": "/assets/artist-images/inder.avif",
+        "role": [
+            "Comedian"
+        ]
+    },
+    {
+        "artistId": 45,
+        "name": "Maheep Singh",
+        "image": "/assets/artist-images/maheep.avif",
+        "role": [
+            "Comedian"
+        ]
+    },
+    {
+        "artistId": 47,
+        "name": "Ravi Gupta",
+        "image": "/assets/artist-images/raviGupta.jpg",
+        "role": [
+            "Comedian"
+        ]
+    },  {
+        "artistId": 48,
+        "name": "Shreya Priyam",
+        "image": "/assets/artist-images/shreyaPriyam.avif",
+        "role": [
+           "Comedian"
+        ]
+    } , {
+        "artistId": 49,
+        "name": "Vaibhav Arora",
+        "image": "/assets/artist-images/vaibhavArora.avif",
+        "role": [
+            "Comedian"
+        ]
+    }, {
+        "artistId": 50,
+        "name": "Vikas Kush Sharma",
+        "image": "/assets/artist-images/vikas.avif",
+        "role": [
+            "Comedian"
+        ]
+    }, {
+        "artistId": 51,
+        "name": "Madhur Virli",
+        "image": "/assets/artist-images/madhur.jpg",
+        "role": [
+            "Comedian"
+        ]
     }
-   
 ]

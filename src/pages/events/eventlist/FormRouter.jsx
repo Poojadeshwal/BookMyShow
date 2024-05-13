@@ -7,12 +7,12 @@ import { removeFunction } from "../../../services/events/events";
 import moment from "moment";
 
 
-export default function FormRouter({ setEvent, next }) {
+export default function FormRouter({ setEvent, next,results }) {
   const [updatedCount, setUpdatedCount] = useState(0);
   const [isModelOpen, setIsModalOpen] = useState(false);
   const [form] = Form.useForm();
 
-  console.log("form")
+  // console.log("form")
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -86,6 +86,7 @@ export default function FormRouter({ setEvent, next }) {
         setEvent={setEvent}
         next={next}
         handleDelete={handleDelete}
+        results={results}
       />
     </>
   );

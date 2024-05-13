@@ -44,7 +44,7 @@ const ArtistDetailPage = ({ back, artistId }) => {
         setArtistDetails(detail);
       })
      },[selectedArtist])
-// console.log(artistDetails,"artist daterals ")
+
     return (
         <>
             {artistDetails ? (

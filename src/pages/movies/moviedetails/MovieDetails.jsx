@@ -21,7 +21,7 @@ const Movies = ({ movieDetails, onSelectArtist, review, back, payload, initFormD
    
   const findReview = () => {
     if (review &&  movieDetails &&  movieDetails.length > 0) {
-      console.log(review, "check");
+      // console.log(review, "check");
       const movieIds =  movieDetails.map( movie =>  movie.movieId);
       return review.filter(review => movieIds.includes(review.categoryId));
     }
@@ -35,7 +35,7 @@ const Movies = ({ movieDetails, onSelectArtist, review, back, payload, initFormD
     setReview([...review, payload.current.operation])
     initFormData();
   }
-  console.log("payload", payload.current.data)
+  // console.log("payload", payload.current.data)
   return (
     <>
       <Flex style={{ justifyContent: "space-between", marginBottom: "10px" }}>

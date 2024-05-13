@@ -1,7 +1,8 @@
-import { Modal, Input, Form,  Button } from "antd";
+import { Modal, Input, Form,  Button, Space } from "antd";
 import { addFunction, updateFunction } from "../../../services/movie/movies";
 import { TranslateFunction } from "../../../utils/internalisation";
-
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { useState } from "react";
 
 export default function CreateUpdate({
   isModalOpen,
@@ -12,9 +13,8 @@ export default function CreateUpdate({
   setUpdatedCount,
   updatedCount,
 }) {
-  
+   
 
-//   const dropdown = TranslateFunction("dropdown");
   const labels = TranslateFunction("labels");
 
   const submitForm = (values) => {
@@ -22,7 +22,7 @@ export default function CreateUpdate({
         ...values,
         "genres": [values["genres"]],
         "languages":[values["languages"]],
-        artist:["dfghj"]
+        // artist:["dfghj"]
     }
     payload.current.data = { ...payload.current.data, ...newFieldValues };
     console.log(payload.current.data, "create")
@@ -36,7 +36,7 @@ export default function CreateUpdate({
     } else {
         console.log(payload.current.data,"happy")
       updateFunction(payload.current.data, "movieId").then((data) => {
-        console.log("data",data)
+        console.log("data of updated function",data)
         // onSelectMovie(data.movieId);
         setUpdatedCount(updatedCount + 1);
         handleOk();
@@ -178,6 +178,58 @@ export default function CreateUpdate({
                     width: '100%',
                 }} placeholder="'Please provide Censor Board Rating', " />
           </Form.Item>
+          <Form.List name="artist">
+      {(fields, { add, remove }) => (
+        <>
+          {fields.map(({ key, name, ...restField }) => (
+            <Space
+              key={key}
+              style={{
+                display: 'block',
+                marginBottom: 8,
+
+              }}
+              align="baseline"
+            >
+              <Form.Item
+                {...restField}
+                name={[name, 'name']}
+                label={labels("artistName")}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Missing  name',
+                  },
+                ]}
+              >
+              <Input placeholder="Artist Name" />
+ 
+              </Form.Item>
+              
+             <Form.Item
+                {...restField}
+                name={[name, 'image']}
+                label={labels("artistImage")}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Missing  Image',
+                  },
+                ]}
+              >
+                <Input placeholder="Artist Image"/>
+              </Form.Item>
+              <MinusCircleOutlined onClick={() => remove(name)} style={{marginLeft:"100%", marginTop:"0"}}/>
+            </Space>
+          ))}
+           <Form.Item style={{marginLeft:120}}>
+            <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />} >
+            {labels("addArtist")}
+            </Button>
+          </Form.Item>
+        </>
+      )}
+    </Form.List>
                 <Form.Item>
             <Button type="primary" onClick={handleCancel}>
              {labels("Cancel")} 

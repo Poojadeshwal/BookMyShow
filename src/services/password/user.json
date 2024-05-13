@@ -24,9 +24,6 @@
         "userName": "Anushkha",
         "password": "anushkha",
         "permissions": [
-            "editMovie",
-            "deleteMovie",
-            "addMovie",
             "editEvent",
             "deleteEvent",
             "addEvent"

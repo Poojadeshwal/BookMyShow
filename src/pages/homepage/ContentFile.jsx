@@ -1,10 +1,10 @@
 import { Card, Col, Image, Row, Typography } from "antd";
 import React from "react";
-import EventWrapper from "../events/EventWrapper";
+import { TranslateFunction } from "../../utils/internalisation";
 // import reals from '/assets/logos/reals.jpg'
 const { Text,Title } = Typography;
 const ContentFile = () => {
-
+  const labels = TranslateFunction("labels");
 
     return (
         <>
@@ -34,13 +34,13 @@ const ContentFile = () => {
               src={"assets/logos/logo.png"}
                />}
                  < Typography.Title style={{color:"White",paddingLeft: "150px",fontSize:"40px", height:"60px",marginBottom:"10px",
-                lineHeight:"10px",fontWeight:"bold"}}>STREAM</Typography.Title>
+                lineHeight:"10px",fontWeight:"bold"}}>{labels("STREAM")}</Typography.Title>
           </Col>
-         < Typography.Title style={{color:"White",fontFamily:"serif",fontSize:"55px"}}>Endless Entertainement Anytime.Anywhere!</Typography.Title>
+         < Typography.Title style={{color:"White",fontFamily:"serif",fontSize:"55px"}}>{labels("Endless Entertainement Anytime.Anywhere!")}</Typography.Title>
         </Row>
       </Card>
 
-        <EventWrapper/>
+       
        
         </>
     );

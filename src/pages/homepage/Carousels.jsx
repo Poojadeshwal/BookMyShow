@@ -9,7 +9,7 @@ const contentStyle = {
   width:"100%"
 };
 const Carousels = () => {
-  console.log('Caraousels page accessed')
+  // console.log('Caraousels page accessed')
   return (
   <Carousel effect="fade" autoplay>
     <div>

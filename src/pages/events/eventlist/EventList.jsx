@@ -11,7 +11,7 @@ import {
 import PermissionButton from "../../../structure/PermissionButton";
 import { TranslateFunction } from "../../../utils/internalisation";
 const filterEvents = (events, searchObj) => {
-  console.log("filterevnets" , events)
+  // console.log("filterevnets" , events)
   return events.filter((event) => {
     if (
       !searchObj ||
@@ -33,8 +33,10 @@ const EventList = ({
   updatedCount,
   showModal,
   handleDelete, 
-  onSelectEvent
+  onSelectEvent,
+  results,
 }) => {
+
   const [eventsList, setEventsList] = useState(null);
   const [filteredEvents, setFilteredEvents] = useState(null);
   const button = TranslateFunction("labels");
@@ -43,7 +45,7 @@ const EventList = ({
       setEventsList(events);
     });
   }, [updatedCount]);
-  console.log("list", eventsList);
+  
 
   useEffect(() => {
     if (searchObj && eventsList) {
@@ -73,55 +75,77 @@ const EventList = ({
 }
 
   return (
-    <>
-       <PermissionButton allowedPermissions={["addEvent"]} >
-      <Button
-        style={{
-          color: "white",
-          marginBottom: "20px",
-          marginLeft: "80%",
-          width: "15%",
-          backgroundColor: "rgb(220, 53, 75)",
-          marginTop: "5%",
-          marginRight: "5%",
-          padding: 0,
-        }}
-        onClick={() => {
+   
+    <> 
+      {results && results.length > 0 ? (
+    <>  
+     <Row justify="space-between">
+     {results && results.map((event) => (
+     
+     <Col key={event.eventId} span={7}>
+     <Event
+      key={event.eventId}
+    event={event}
+               index={event.eventId}
+              next={next}
+               setEvent={setEvent}
+               handleDelete={handleDelete}
+               initCreateUpdate={initCreateUpdate}
+               showModal={showModal}
+                onSelectEvent={onSelectEvent}
+             />
+            </Col>
+             ))}
+            </Row>         
+  </>
+):(
+<>
+    <PermissionButton allowedPermissions={["addEvent"]} >
+       <Button
+         style={{
+           color: "white",
+           marginBottom: "20px",
+           marginLeft: "80%",
+           width: "15%",
+           backgroundColor: "rgb(220, 53, 75)",
+           marginTop: "5%",
+           marginRight: "5%",
+           padding: 0,
+         }}
+         onClick={() => {
           initCreateUpdate();
-          showModal();
-        }}
+           showModal();
+         }}
       >
         <PlusOutlined />
         {button("addEvent")}
       </Button>
-      </PermissionButton>
-      <Row justify="space-between">
-        {filteredEvents && filteredEvents.length > 0 ? (
-          filteredEvents.map((event) => ( 
-            <Col key={event.eventId} span={7}>
-              <Event
-                key={event.eventId}
-                event={event}
-                index={event.eventId}
-                next={next}
-                setEvent={setEvent}
-                handleDelete={handleDelete}
-                initCreateUpdate={initCreateUpdate}
-                showModal={showModal}
-                onSelectEvent={onSelectEvent}
-              />
-            </Col>
-          
-          ))
-        ) : (
-          <Typography.Title style={{ color: "rgb(220, 53, 75)" }}>
-            Sorry ! No event found
-          </Typography.Title>
-        )}
-      </Row>
+       </PermissionButton>
+       <Row justify="space-between">
+       {filteredEvents && 
+        filteredEvents.map((event) => ( 
+          <Col key={event.eventId} span={7}>
+                <Event
+               key={event.eventId}
+                      event={event}
+                      index={event.eventId}
+                     next={next}
+                      setEvent={setEvent}
+                    handleDelete={handleDelete}
+                       initCreateUpdate={initCreateUpdate}
+                       showModal={showModal}
+                        onSelectEvent={onSelectEvent}
+                     />
+                   </Col> 
+        )
+       )}
+
+       </Row>
+  </>
+)}
     </>
   );
-};
+}
 
 const Event = ({
   event,
@@ -135,7 +159,7 @@ const Event = ({
   const handleClick = () => {
     // setEvent(event);
     // next();
-    console.log("handle")
+    // console.log("handle")
     onSelectEvent(event.eventId);  
   };
 

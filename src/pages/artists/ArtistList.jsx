@@ -4,9 +4,10 @@ import { getArtist } from "../../services/artist/artist";
 import { Card, Space, Typography } from "antd";
 import Meta from "antd/es/card/Meta";
 import { useNavigate } from "react-router-dom";
+import { TranslateFunction } from "../../utils/internalisation";
 const { Text,Paragraph,Title } = Typography;
 const ArtistList = ({ selectArtist, results }) => {
-    
+    const labels = TranslateFunction("labels");
     const navigate = useNavigate();
     selectArtist=artistId=>navigate(`/artist/${artistId}`)
 
@@ -22,7 +23,8 @@ const ArtistList = ({ selectArtist, results }) => {
 
     return (
         <>
-            <><Typography.Title>Artists </Typography.Title></>
+            
+            <Typography.Title>{labels("Artists")} </Typography.Title>
             {results && results.length > 0 ? (
                 results.map((artist, index) => (
                     <Space size="large" key={index}>
