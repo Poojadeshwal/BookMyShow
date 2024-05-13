@@ -45,7 +45,7 @@
     "Log out": "लॉग आउट",
     "Home": "होम",
     "Movies": "फिल्में",
-    "Events": "घटनाएँ",
+    "Events": "कार्यक्रम",
     "Artist": "कलाकार",
     "Shows": "शो",
     "Gift Cards": "गिफ्ट कार्ड्स",
@@ -72,5 +72,8 @@
     "comedy": "कार्यक्रम",
     "eventsInDelhi-NCR": " दिल्ली-एनसीआर में कार्यक्रम",
     "filters": "फिल्टर",
-    "Artists": "कलाकार"
+    "Artists": "कलाकार", 
+    "languages": "भाषा", 
+    "location": "स्थान"
+
 }

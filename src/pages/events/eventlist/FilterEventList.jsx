@@ -71,7 +71,7 @@ export default function FilterEventList({ searchObj, setSearchObj }) {
         <Layout style={{ backgroundColor: "white", marginLeft: "10px" }}>
           <Layout.Sider style={{ backgroundColor: "white" }}>
             <Collapse style={{ marginLeft: "5%" }}>
-              <Collapse.Panel header="Languages">
+              <Collapse.Panel header={translation("languages")}>
                 <Space wrap>
                   {languages.map((language, index) => (
                     <Button
@@ -102,7 +102,7 @@ export default function FilterEventList({ searchObj, setSearchObj }) {
               </Collapse.Panel>
             </Collapse>
             <Collapse style={{ marginLeft: "5%", marginTop: "10%" }}>
-              <Collapse.Panel header="Location">
+              <Collapse.Panel  header={translation("location")}>
                 <Space wrap>
                   {location.map((location, index) => (
                     <Button

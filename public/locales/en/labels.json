@@ -72,5 +72,7 @@
     "eventDetail": "Event Detail",
     "comdey": "Comedy",
     "eventsInDelhi-NCR": "Events in Delhi-NCR",
-    "filters": "Filters"
+    "filters": "Filters", 
+    "languages": "Languages",
+    "location":"Location"
 }
